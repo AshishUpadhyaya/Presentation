@@ -1,0 +1,16 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: programming-joke-pod
+  labels: 
+   app: joke-app
+    
+spec:
+  containers:
+    - name: programming-joke-container
+      image: programming-joke-image
+      command: ["/bin/sh", "-c"]
+      args: ["go run main.go"]
+      imagePullPolicy: Never
